@@ -13,7 +13,10 @@ import {
   Gamepad2,
   Brain,
   Calculator,
-  Atom
+  Atom,
+  Github,
+  Code,
+  Heart
 } from "lucide-react";
 
 const LandingPage = () => {
@@ -78,9 +81,15 @@ const LandingPage = () => {
       <section className="bg-gradient-hero text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">
-              Government of Odisha Initiative
-            </Badge>
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              <Badge className="bg-white/20 text-white border-white/30">
+                Government of Odisha Initiative
+              </Badge>
+              <Badge className="bg-success/20 text-white border-success/30">
+                <Code className="mr-1 h-3 w-3" />
+                Open Source
+              </Badge>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Transforming Rural Education
               <br />
@@ -193,6 +202,68 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Open Source Section */}
+      <section className="py-20 bg-muted/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Open Source & Community Driven</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              EduQuest is open source and built with the community. Contribute to making education accessible for all rural students.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="shadow-card text-center">
+              <CardHeader>
+                <Github className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <CardTitle>View Source Code</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Explore the complete source code and understand how EduQuest works under the hood.
+                </p>
+                <Button variant="outline" onClick={() => window.open('https://github.com/government-odisha/eduquest', '_blank')}>
+                  <Github className="mr-2 h-4 w-4" />
+                  GitHub Repository
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card text-center">
+              <CardHeader>
+                <Code className="h-12 w-12 mx-auto mb-4 text-secondary" />
+                <CardTitle>Contribute</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Help improve EduQuest by contributing code, content, or reporting issues.
+                </p>
+                <Button variant="outline" onClick={() => window.open('https://github.com/government-odisha/eduquest/blob/main/CONTRIBUTING.md', '_blank')}>
+                  <Heart className="mr-2 h-4 w-4" />
+                  Contribute
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card text-center">
+              <CardHeader>
+                <BookOpen className="h-12 w-12 mx-auto mb-4 text-success" />
+                <CardTitle>Documentation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Learn how to deploy, customize, and extend EduQuest for your region.
+                </p>
+                <Button variant="outline" onClick={() => window.open('https://github.com/government-odisha/eduquest/wiki', '_blank')}>
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  Read Docs
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-primary text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -214,6 +285,58 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-card border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="md:col-span-2">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                  <BookOpen className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-gradient-primary">EduQuest</span>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                An open source initiative by Government of Odisha to transform rural education through gamified STEM learning.
+              </p>
+              <div className="flex space-x-4">
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => window.open('https://github.com/government-odisha/eduquest', '_blank')}
+                >
+                  <Github className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-primary transition-smooth">Documentation</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">API Reference</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">Contributing Guide</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">Issue Tracker</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold mb-4">Community</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-primary transition-smooth">GitHub Discussions</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">Contributors</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">Roadmap</a></li>
+                <li><a href="#" className="hover:text-primary transition-smooth">License</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-border pt-8 mt-8 text-center text-sm text-muted-foreground">
+            <p>© 2024 Government of Odisha. Open source under MIT License.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

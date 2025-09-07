@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, BookOpen, Users, BarChart3, Globe } from "lucide-react";
+import { Menu, X, BookOpen, Users, BarChart3, Globe, Github } from "lucide-react";
 
 interface NavigationProps {
   currentView: "landing" | "student" | "teacher";
@@ -48,6 +48,14 @@ const Navigation = ({ currentView, onNavigate }: NavigationProps) => {
               <Globe className="h-4 w-4" />
               <span>English</span>
             </Button>
+            <Button 
+              variant="outline" 
+              className="flex items-center space-x-2"
+              onClick={() => window.open('https://github.com/government-odisha/eduquest', '_blank')}
+            >
+              <Github className="h-4 w-4" />
+              <span className="hidden lg:inline">GitHub</span>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -83,6 +91,14 @@ const Navigation = ({ currentView, onNavigate }: NavigationProps) => {
               <Button variant="secondary" className="flex items-center space-x-2 justify-start">
                 <Globe className="h-4 w-4" />
                 <span>Language: English</span>
+              </Button>
+              <Button 
+                variant="outline" 
+                className="flex items-center space-x-2 justify-start"
+                onClick={() => window.open('https://github.com/government-odisha/eduquest', '_blank')}
+              >
+                <Github className="h-4 w-4" />
+                <span>View on GitHub</span>
               </Button>
             </div>
           </div>
