@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/eduquest/", // 👈 Must match your GitHub repo name
+  base: "/vidya-khel-connect/", // 👈 Must match your GitHub repo name
   host: "0",
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
